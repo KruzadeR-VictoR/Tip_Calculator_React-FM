@@ -132,6 +132,7 @@ main .calculator .left .bill-no .Bill-input input {
       -ms-flex: 1;
           flex: 1;
   background-color: inherit;
+  color: #7f9c9f;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
@@ -189,7 +190,7 @@ main .calculator .left .select-Tip .tip-amount button:hover {
 
 main .calculator .left .select-Tip .tip-amount button:focus {
   background-color: #f4fafa;
-  color: #5e7a7d;
+  color: #00494d;
 }
 
 main .calculator .left .People {
@@ -229,6 +230,7 @@ main .calculator .left .People .people-input input {
       -ms-flex: 1;
           flex: 1;
   background-color: inherit;
+  color: #7f9c9f;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;

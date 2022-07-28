@@ -56,7 +56,6 @@ function App() {
     setPeople("");
     setTip(0);
     setTotal(0);
-    
   };
   return (
     <>
@@ -89,11 +88,13 @@ function App() {
                 {PercentValues.map((element) => (
                   <button
                     key={element.id}
-                    className="tip-amt"
+                    className={Percent ? "tip-amt active" : "tip-amt"}
                     value={Percent}
                     onClick={() => setPercent(element.value)}
                   >
-                    {element.value}%
+                    {element.value == "Custom"
+                      ? element.value
+                      : `${element.value}%`}
                   </button>
                 ))}
               </div>
