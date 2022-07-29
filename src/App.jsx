@@ -60,7 +60,6 @@ function App() {
     setPercent(e.target.value);
   };
 
-
   const handleCalculation = (e) => {
     setPeople(e.target.value);
     // console.log(e.target.value);
@@ -86,6 +85,7 @@ function App() {
               <span className="bill-text">Bill</span>
               <div className="Bill-input">
                 <img src={dollar} alt="" />
+                <label htmlFor="Bill"></label>
                 <input
                   className="bill-amt"
                   type="text"
@@ -94,7 +94,6 @@ function App() {
                   value={Bill}
                   onChange={(e) => setBill(e.target.value)}
                   autoComplete="off"
-                  aria-labelledby="Bill amount"
                 />
               </div>
             </div>
@@ -117,7 +116,6 @@ function App() {
                   type="text"
                   placeholder="Custom"
                   onChange={handleCustomPercent}
-                  aria-labelledby="Custom Percentage"
                 />
               </div>
             </div>
@@ -126,15 +124,15 @@ function App() {
               <span>Number of People</span>
               <div className="people-input">
                 <img src={person} alt="" />
+                <label htmlFor="People"></label>
                 <input
                   className="people-no"
                   type="text"
                   name="people"
                   value={People}
-                  onChange={handleCalculation}                  
+                  onChange={handleCalculation}
                   placeholder="0"
                   autoComplete="off"
-                  aria-labelledby="no of people"
                 />
               </div>
               {People == 0 ? (
@@ -148,15 +146,15 @@ function App() {
           <div className="right">
             <div className="stats">
               <div className="Tip">
-                <h5 aria-label="heading">
+                <div className="heading-output">
                   Tip Amount <span>/ person</span>
-                </h5>
+                </div>
                 <h1 className="Tip-person">{Tip ? Tip.toFixed(2) : 0}</h1>
               </div>
               <div className="Total">
-                <h5 aria-label="heading">
+                <div className="heading-output">
                   Total <span>/ person</span>
-                </h5>
+                </div>
                 <h1 className="Tip-total">{Total ? Total.toFixed(2) : 0}</h1>
               </div>
             </div>

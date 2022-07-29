@@ -331,14 +331,14 @@ main .calculator .right .stats .Total {
   gap: 5rem;
 }
 
-main .calculator .right .stats .Tip h5,
-main .calculator .right .stats .Total h5 {
+main .calculator .right .stats .Tip .heading-output,
+main .calculator .right .stats .Total .heading-output {
   color: white;
   font-size: 0.8rem;
 }
 
-main .calculator .right .stats .Tip h5 span,
-main .calculator .right .stats .Total h5 span {
+main .calculator .right .stats .Tip .heading-output span,
+main .calculator .right .stats .Total .heading-output span {
   display: block;
   color: #7f9c9f;
   font-size: 0.7rem;
