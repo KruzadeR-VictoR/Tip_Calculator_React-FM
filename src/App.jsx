@@ -124,9 +124,10 @@ function App() {
               <span>Number of People</span>
               <div className="people-input">
                 <img src={person} alt="" />
-                <label htmlFor="noOfPeople"></label>
+                <label htmlFor="People"></label>
                 <input
                   className="people-no"
+                  id="People"
                   type="text"
                   name="people"
                   value={People}
