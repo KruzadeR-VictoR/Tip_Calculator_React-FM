@@ -103,8 +103,10 @@ main {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: 1rem;
-          button {
+          button,
+          .Custom {
             cursor: pointer;
+            width: 7rem;
             background-color: $darkCyan;
             color: white;
             border: none;
@@ -120,6 +122,9 @@ main {
               background-color: $veryLightGrayCyan;
               color: $darkCyan;
             }
+          }
+          .Custom::placeholder {
+            color: white;
           }
         }
       }
@@ -153,7 +158,15 @@ main {
               border: none;
               outline: none;
             }
+            &::placeholder {
+              color: $grayCyan;
+            }
           }
+        }
+        .error{
+          align-self: flex-end;
+          color: rgb(255, 30, 30);
+          font-size: .8rem;
         }
       }
     }
@@ -202,4 +215,11 @@ main {
       }
     }
   }
+}
+
+//| Utility
+
+.selected {
+  background-color: $veryLightGrayCyan !important;
+  color: $darkCyan !important;
 }

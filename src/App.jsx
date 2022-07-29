@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import dollar from "./assets/icon-dollar.svg";
 import person from "./assets/icon-person.svg";
 import logo from "./assets/logo.svg";
@@ -35,19 +35,35 @@ function App() {
       id: 5,
       value: 50,
     },
-    {
-      id: 6,
-      value: "Custom",
-    },
+    // {
+    //   id: 6,
+    //   value: "Custom",
+    // },
   ];
 
   useEffect(() => {
-    setTotal(Bill / People + Tip);
-  }, [People]);
+    if (People == 0) {
+      return;
+    } else {
+      setTip((Bill * Percent) / 100 / People);
+    }
+  }, [People, Percent, Bill]);
+
+  useMemo(() => setTotal(Bill / People + Tip), [Tip]);
+
+  const handlePercent = (e) => {
+    setPercent(e.target.value);
+    console.log({ e });
+    // setSelected(true);
+  };
+  const handleCustomPercent = (e) => {
+    setPercent(e.target.value);
+  };
+
 
   const handleCalculation = (e) => {
     setPeople(e.target.value);
-    setTip((Bill * Percent) / 100 / e.target.value);
+    // console.log(e.target.value);
   };
 
   const handleReset = () => {
@@ -88,15 +104,19 @@ function App() {
                 {PercentValues.map((element) => (
                   <button
                     key={element.id}
-                    className={Percent ? "tip-amt active" : "tip-amt"}
-                    value={Percent}
-                    onClick={() => setPercent(element.value)}
+                    // className="selected"
+                    value={element.value}
+                    onClick={handlePercent}
                   >
-                    {element.value == "Custom"
-                      ? element.value
-                      : `${element.value}%`}
+                    {element.value}%
                   </button>
                 ))}
+                <input
+                  className="Custom"
+                  type="text"
+                  placeholder="Custom"
+                  onChange={handleCustomPercent}
+                />
               </div>
             </div>
             {/* no fo people  */}
@@ -109,10 +129,16 @@ function App() {
                   type="text"
                   name="people"
                   value={People}
-                  onChange={handleCalculation}
+                  onChange={handleCalculation}                  
+                  placeholder="0"
                   autoComplete="off"
                 />
               </div>
+              {People == 0 ? (
+                <div className="error">Value can't be zero</div>
+              ) : (
+                ""
+              )}
             </div>
           </div>
           {/* right side  */}

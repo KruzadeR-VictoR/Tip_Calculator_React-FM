@@ -171,8 +171,10 @@ main .calculator .left .select-Tip .tip-amount {
   gap: 1rem;
 }
 
-main .calculator .left .select-Tip .tip-amount button {
+main .calculator .left .select-Tip .tip-amount button,
+main .calculator .left .select-Tip .tip-amount .Custom {
   cursor: pointer;
+  width: 7rem;
   background-color: #00494d;
   color: white;
   border: none;
@@ -183,14 +185,32 @@ main .calculator .left .select-Tip .tip-amount button {
   transition: all 0.3s ease-in-out;
 }
 
-main .calculator .left .select-Tip .tip-amount button:hover {
+main .calculator .left .select-Tip .tip-amount button:hover,
+main .calculator .left .select-Tip .tip-amount .Custom:hover {
   background-color: #05e1c4;
   color: #00494d;
 }
 
-main .calculator .left .select-Tip .tip-amount button:focus {
+main .calculator .left .select-Tip .tip-amount button:focus,
+main .calculator .left .select-Tip .tip-amount .Custom:focus {
   background-color: #f4fafa;
   color: #00494d;
+}
+
+main .calculator .left .select-Tip .tip-amount .Custom::-webkit-input-placeholder {
+  color: white;
+}
+
+main .calculator .left .select-Tip .tip-amount .Custom:-ms-input-placeholder {
+  color: white;
+}
+
+main .calculator .left .select-Tip .tip-amount .Custom::-ms-input-placeholder {
+  color: white;
+}
+
+main .calculator .left .select-Tip .tip-amount .Custom::placeholder {
+  color: white;
 }
 
 main .calculator .left .People {
@@ -242,6 +262,29 @@ main .calculator .left .People .people-input input {
 main .calculator .left .People .people-input input:focus {
   border: none;
   outline: none;
+}
+
+main .calculator .left .People .people-input input::-webkit-input-placeholder {
+  color: #7f9c9f;
+}
+
+main .calculator .left .People .people-input input:-ms-input-placeholder {
+  color: #7f9c9f;
+}
+
+main .calculator .left .People .people-input input::-ms-input-placeholder {
+  color: #7f9c9f;
+}
+
+main .calculator .left .People .people-input input::placeholder {
+  color: #7f9c9f;
+}
+
+main .calculator .left .People .error {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  color: #ff1e1e;
+  font-size: .8rem;
 }
 
 main .calculator .right {
@@ -315,5 +358,10 @@ main .calculator .right .Reset {
   font-size: 1.1rem;
   border: none;
   border-radius: 5px;
+}
+
+.selected {
+  background-color: #f4fafa !important;
+  color: #00494d !important;
 }
 /*# sourceMappingURL=App.css.map */
