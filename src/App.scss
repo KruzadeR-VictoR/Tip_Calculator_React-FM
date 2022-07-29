@@ -85,6 +85,9 @@ main {
               border: none;
               outline: none;
             }
+            &::placeholder {
+              color: $grayCyan;
+            }
           }
         }
       }
@@ -163,10 +166,10 @@ main {
             }
           }
         }
-        .error{
+        .error {
           align-self: flex-end;
           color: rgb(255, 30, 30);
-          font-size: .8rem;
+          font-size: 0.8rem;
         }
       }
     }

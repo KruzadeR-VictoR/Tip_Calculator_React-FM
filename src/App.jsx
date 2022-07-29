@@ -85,15 +85,16 @@ function App() {
               <span className="bill-text">Bill</span>
               <div className="Bill-input">
                 <img src={dollar} alt="" />
-                <label htmlFor="BillAmount"></label>
+                <label htmlFor="Bill"></label>
                 <input
                   className="bill-amt"
-                  id="BillAmount"
+                  id="Bill"
                   type="text"
-                  name="Bill"
+                  name="bill"
                   value={Bill}
                   onChange={(e) => setBill(e.target.value)}
                   autoComplete="off"
+                  placeholder="0"
                 />
               </div>
             </div>
