@@ -94,6 +94,7 @@ function App() {
                   value={Bill}
                   onChange={(e) => setBill(e.target.value)}
                   autoComplete="off"
+                  aria-labelledby="Bill amount"
                 />
               </div>
             </div>
@@ -116,6 +117,7 @@ function App() {
                   type="text"
                   placeholder="Custom"
                   onChange={handleCustomPercent}
+                  aria-labelledby="Custom Percentage"
                 />
               </div>
             </div>
@@ -132,6 +134,7 @@ function App() {
                   onChange={handleCalculation}                  
                   placeholder="0"
                   autoComplete="off"
+                  aria-labelledby="no of people"
                 />
               </div>
               {People == 0 ? (
@@ -145,13 +148,13 @@ function App() {
           <div className="right">
             <div className="stats">
               <div className="Tip">
-                <h5>
+                <h5 aria-label="heading">
                   Tip Amount <span>/ person</span>
                 </h5>
                 <h1 className="Tip-person">{Tip ? Tip.toFixed(2) : 0}</h1>
               </div>
               <div className="Total">
-                <h5>
+                <h5 aria-label="heading">
                   Total <span>/ person</span>
                 </h5>
                 <h1 className="Tip-total">{Total ? Total.toFixed(2) : 0}</h1>
